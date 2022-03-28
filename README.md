@@ -1,7 +1,7 @@
 ---
-Task: Detection
+Task: Classification
 Tags:
-  - Detection
+  - Classification
   - YoloV4
 ---
 
