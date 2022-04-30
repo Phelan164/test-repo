@@ -52,7 +52,8 @@ class TritonPythonModel(object):
             # only process the one we want. Same rationale for the outputs
             batch_out = {k: [] for k, name in self.output_names.items(
             ) if name in request.requested_output_names()}
-            batch_out['orig_img_hw'].append([10, 10])
+            for i in range(request.inputs()[0].as_numpy().shape[0]):
+                batch_out['orig_img_hw'].append([10, 10])
 
             # Format outputs to build an InferenceResponse
             # Assumes there is only one output
